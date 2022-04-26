@@ -48,7 +48,7 @@ function ItemCard({title,image,price,initial,stock,onAdd}){
         <p style={pStyle}>${price}</p>
         <img style={imgStyle} src={`./assets/img/${image}`} alt="" />
         <ItemCount count={count} setCount={setCount} stock={stock}/>
-        <button onClick={() => onAdd(count)} style={buttonStyle}>Agregar al Carrito</button>
+        <button onClick={() => stock>0 &&  onAdd(count)} style={buttonStyle}>Agregar al Carrito</button>
     </div>);
 }
 
