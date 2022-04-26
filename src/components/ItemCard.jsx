@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 
 const ItemCardStyle={
@@ -41,13 +41,14 @@ const buttonStyle={
     fontSize: '20px',
 }
 
-function ItemCard({title,image,price}){
+function ItemCard({title,image,price,initial,stock,onAdd}){
+    const [count,setCount] = useState(Number(initial));
     return (<div style={ItemCardStyle}>
         <h3 style={h3Style}>{title}</h3>
         <p style={pStyle}>${price}</p>
         <img style={imgStyle} src={`./assets/img/${image}`} alt="" />
-        <ItemCount/>
-        <button style={buttonStyle}>Agregar al Carrito</button>
+        <ItemCount count={count} setCount={setCount} stock={stock}/>
+        <button onClick={() => onAdd(count)} style={buttonStyle}>Agregar al Carrito</button>
     </div>);
 }
 

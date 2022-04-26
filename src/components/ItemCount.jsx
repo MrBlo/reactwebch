@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const divStyle={
-    marginTop: '20px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -40,13 +39,12 @@ const countStyle = {
     width: '22px',
 }
 
-function ItemCount(){
-    const [count,setCount] = useState(0);
+function ItemCount({count, setCount, stock}){
     return (
         <div style={divStyle}>
-            <button style={buttonStyle} onClick={() => setCount(count-1)}>-</button>
+            <button style={buttonStyle} onClick={() => count!=0 && setCount(count-1)}>-</button>
             <p style={countStyle}>{count}</p>
-            <button style={buttonStyle} onClick={() => setCount(count+1)}>+</button>
+            <button style={buttonStyle} onClick={() => count!=stock && setCount(count+1)}>+</button>
         </div>
     );
 }
