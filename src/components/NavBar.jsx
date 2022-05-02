@@ -7,7 +7,7 @@ import CartWidget from './CartWidget';
 
 function NavBar() {
     return (
-        <Navbar bg="light" variant="light">
+        <Navbar bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#inicio">E-Commerce</Navbar.Brand>
                 <Nav className="ms-auto">

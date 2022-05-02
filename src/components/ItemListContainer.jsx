@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ItemCard from "./ItemCard";
 import ItemList from "./ItemList";
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   const onAddFn = () => console.log("onAdd test");
   const itemData = [
     {
       title: "Bicicleta Aro 29",
       image: "fenixaro29.jpg",
+      detail: "Bicicleta MTB, perfecta para salidas a la montaña",
       price: 22000,
       initial: 3,
       stock: 6,
@@ -16,6 +16,7 @@ function ItemListContainer(props) {
     {
       title: "Moto Yamaha",
       image: "yamahamoto.jpg",
+      detail: "Moto Yamaha para ciudad",
       price: 522000,
       initial: 2,
       stock: 5,
@@ -24,6 +25,7 @@ function ItemListContainer(props) {
     {
       title: "Auto BMW Ces2018",
       image: "bmwces2018auto.jpg",
+      detail: "Auto BMW, modelo para ciudad y carretera",
       price: 692000,
       initial: 0,
       stock: 2,

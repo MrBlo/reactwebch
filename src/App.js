@@ -4,6 +4,9 @@ import ItemListContainer from './components/ItemListContainer';
 
 const bodyStyle={
   fontFamily: 'DM Sans, sans-serif',
+  backgroundColor: "#121212",
+  minHeight: "100vh",
+  color: "whitesmoke"
 }
 
 function App() {

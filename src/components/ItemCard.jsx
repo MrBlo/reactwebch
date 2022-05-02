@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const ItemCardStyle = {
   width: "300px",
@@ -41,17 +42,22 @@ const buttonStyle = {
   fontSize: "20px",
 };
 
-function ItemCard({ title, image, price, initial, stock, onAdd }) {
+
+
+
+function ItemCard({ title, image, price, initial, stock, onAdd , detail}) {
   const [count, setCount] = useState(Number(initial));
   return (
     <div style={ItemCardStyle}>
       <h3 style={h3Style}>{title}</h3>
       <p style={pStyle}>${price}</p>
       <img style={imgStyle} src={`./assets/img/${image}`} alt="" />
+      <ItemDetailContainer detail={detail}/>
       <ItemCount count={count} setCount={setCount} stock={stock} />
       <button onClick={() => stock > 0 && onAdd(count)} style={buttonStyle}>
         Agregar al Carrito
       </button>
+
     </div>
   );
 }
