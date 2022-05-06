@@ -1,0 +1,51 @@
+.ItemCard {
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 6px solid #29274a;
+  color: #f9fcfe;
+  background-color: #3c3978;
+}
+
+.ItemCard__title {
+  font-size: 23px;
+}
+
+.ItemCard__image {
+  width: 180px;
+  height: 180px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ItemCard__price {
+  font-size: 19px;
+}
+
+.ItemCard__button {
+  background-color: #2a2a4c;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-left: 16%;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  width: 66%;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.ItemCard__detail{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: aquamarine;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: cyan;
+}

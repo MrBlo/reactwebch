@@ -1,21 +1,21 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-
-const bodyStyle={
-  fontFamily: 'DM Sans, sans-serif',
-  backgroundColor: "#121212",
-  minHeight: "100vh",
-  color: "whitesmoke"
-}
+import Rutas from './routes/Rutas';
 
 function App() {
   return (
-    <div className="App" style={bodyStyle}>
-      <NavBar />
-      <ItemListContainer/>
-    </div>
+    <Rutas/>
   );
 }
 
 export default App;
+
+/*
+
+    <div className="App" style={bodyStyle}>
+      <NavBar />
+      <ItemListContainer/>
+    </div>
+    
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+*/

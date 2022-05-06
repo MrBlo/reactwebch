@@ -1,0 +1,7 @@
+.ItemList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 16px;
+  place-items: start start;
+  place-content: start start;
+}

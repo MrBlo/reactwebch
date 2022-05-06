@@ -3,17 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import CartWidget from './CartWidget';
+import CartWidget from '../../components/CardWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#inicio">E-Commerce</Navbar.Brand>
+                <NavLink className="navbar-brand" to="/">Commerce</NavLink>
                 <Nav className="ms-auto">
-                    <Nav.Link href="#inicio">Inicio</Nav.Link>
-                    <Nav.Link href="#productos">Productos</Nav.Link>
-                    <Nav.Link href="#precios">Precios</Nav.Link>
+                    <NavLink className="nav-link" to="/">Inicio</NavLink>
+                    <NavLink className="nav-link" to="/category/1">Bicicletas</NavLink>
+                    <NavLink className="nav-link" to="/category/2">Motos</NavLink>
+                    <NavLink className="nav-link" to="/category/3">Autos</NavLink>
                     <Nav.Link href="#carrito"><CartWidget value="4"/></Nav.Link>
                 </Nav>
             </Container>

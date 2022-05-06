@@ -1,0 +1,36 @@
+.ItemCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #a19ec7;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.ItemCount__button {
+  height: 30px;
+  width: 30px;
+  background-color: #2f305c;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  color: whiteSmoke;
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: 0px;
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ItemCount__counter {
+  font-size: 20px;
+  margin-bottom: 0;
+  width: 22px;
+}

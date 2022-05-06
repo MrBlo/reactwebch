@@ -1,0 +1,17 @@
+.CartWidget {
+  position: relative;
+}
+
+.CartWidget__image {
+  width: 32px;
+}
+
+.CartWidget__counter {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  height: 12px;
+  width: 4px;
+}
