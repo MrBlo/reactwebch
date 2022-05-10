@@ -34,3 +34,18 @@
   margin-bottom: 0;
   width: 22px;
 }
+
+.ItemCount_add{
+  background-color: #2a2a4c;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-left: 16%;
+  margin: auto auto;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  width: 66%;
+  margin-top: 5px;
+  font-size: 15px;
+}

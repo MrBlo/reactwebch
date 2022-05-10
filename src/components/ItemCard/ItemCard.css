@@ -24,20 +24,6 @@
   font-size: 19px;
 }
 
-.ItemCard__button {
-  background-color: #2a2a4c;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  margin-left: 16%;
-  border-radius: 5px;
-  color: white;
-  height: 40px;
-  width: 66%;
-  margin-top: 5px;
-  font-size: 20px;
-}
-
 .ItemCard__detail{
   display: inline-block;
   text-align: center;

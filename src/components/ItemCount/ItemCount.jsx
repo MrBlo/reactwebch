@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemCount.css";
 
-function ItemCount({ count, setCount, stock }) {
+function ItemCount({ count, setCount, stock , onAdd}) {
   return (
     <div className="ItemCount">
       <button
@@ -17,6 +17,7 @@ function ItemCount({ count, setCount, stock }) {
       >
         +
       </button>
+      <button className="ItemCount_add" onClick={onAdd}>Agregar al carro</button>
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.ItemDetail__link{
+    margin: 0 auto;
+    font-size: large;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #a19ec7;
+    text-decoration: none;
+}
