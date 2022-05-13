@@ -1,16 +1,27 @@
 //rafce
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {CartContext} from "../../context/CartContext/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ id, title, price, image, extendedDetail,category,stock }) => {
+/*
+title: "Bicicleta Aro 29",
+        image: "fenixaro29.jpg",
+        detail: "Bicicleta MTB, perfecta para salidas a la montaña",
+        id: 1,
+        categoryId: 1,
+        price: 22000,
+*/
+
+const ItemDetail = ({ id, title, price, image, detail ,extendedDetail,category,categoryId,stock }) => {
   const [count, setCount] = useState(0);
   const [showCount, setShowCount] = useState(true);
+  const {addItem} = useContext(CartContext);
   const onAdd = () =>{
-    console.log("Changed")
-    setShowCount(false)
+    addItem({title,image,detail,id,categoryId,price,"quantity":count});
+    setShowCount(false);
   };
 
   if(!id) return <h1>Cargando</h1>

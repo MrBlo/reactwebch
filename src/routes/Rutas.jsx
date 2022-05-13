@@ -9,7 +9,7 @@ const Rutas = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LayOut />}>
+          <Route path="/" element={<LayOut />}>
           <Route index element={<ItemListContainer />} />
           <Route path="/category/:id" element={<ItemListContainer/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>

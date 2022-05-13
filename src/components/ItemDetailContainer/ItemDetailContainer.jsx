@@ -19,6 +19,7 @@ function ItemDetailContainer() {
     });
     return () => {};
   }, [detail]);
+  
   return ItemDetail(detail);
 }
 
