@@ -4,31 +4,44 @@ export const CartContext = createContext('');
 
 const CartProvider = ({children}) => {
     const [itemCart, setItemCart] = useState([]);
+    const [countItems, setCountItems] = useState(0);
 
     const addItem = (item) => {
-        console.log(item.id)
-        const index = itemCart.findIndex(i => i.id == item.id);
+        const itemClone = [...itemCart];
+        const index = itemClone.findIndex(i => i.id == item.id);
         if(index != -1){
-            console.log("Existe")
-            itemCart[index].quantity += item.quantity;
+            itemClone[index].quantity += item.quantity;
         }else{
-            console.log("No existe")
-            itemCart.push(item);
+            itemClone.push(item);
         }
-        setItemCart(itemCart);
-        console.log(itemCart);
+        setItemCart(itemClone);
+        getTotalItems(itemClone);
+    }
+    const getTotalPrice =() => {
+        return itemCart.reduce((previusValue, currentValue) => (previusValue + currentValue.quantity*currentValue.price),0)
+    }
+    const getTotalItems =(itemClone) => {
+        setCountItems(
+            itemClone.reduce((previusValue, currentValue) => (previusValue + (currentValue.quantity||0)),0)
+            )
     }
     const removeItem = (id) => {
         let index = itemCart.findIndex(i => i.id == id);
         if (index == -1) return;
-        itemCart.splice(index, index == 0 ? index + 1 : index);
-        setItemCart(itemCart);
+        const itemClone = [...itemCart];
+        itemClone.splice(index, index == 0 ? index + 1 : index);
+        setItemCart(itemClone)
+        getTotalItems(itemClone);
     };
-    const clear = () => setItemCart([]);
+
+    const clear = () => {
+        setCountItems(0);
+        setItemCart([])
+    };
     //const isInCart = (id) => itemCart.includes(i => i.id==id);
 
     return (
-        <CartContext.Provider value={{addItem,removeItem,clear}}>
+        <CartContext.Provider value={{itemCart,addItem,removeItem,clear,getTotalPrice,countItems}}>
                 {children}
         </CartContext.Provider>
   )

@@ -16,7 +16,7 @@ function NavBar() {
                     <NavLink className="nav-link" to="/category/1">Bicicletas</NavLink>
                     <NavLink className="nav-link" to="/category/2">Motos</NavLink>
                     <NavLink className="nav-link" to="/category/3">Autos</NavLink>
-                    <Nav.Link href="#carrito"><CartWidget value="4"/></Nav.Link>
+                    <NavLink to="/cart"><CartWidget/></NavLink>
                 </Nav>
             </Container>
         </Navbar>
