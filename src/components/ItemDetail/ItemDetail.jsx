@@ -15,7 +15,7 @@ title: "Bicicleta Aro 29",
         price: 22000,
 */
 
-const ItemDetail = ({ id, title, price, image, detail ,extendedDetail,category,categoryId,stock }) => {
+const ItemDetail = ({ id, title, price, image, detail ,category,categoryId,stock }) => {
   const [count, setCount] = useState(0);
   const [showCount, setShowCount] = useState(true);
   const {addItem} = useContext(CartContext);
@@ -23,13 +23,13 @@ const ItemDetail = ({ id, title, price, image, detail ,extendedDetail,category,c
     addItem({title,image,detail,id,categoryId,price,"quantity":count});
     setShowCount(false);
   };
-
+  //<Image className="w-75" src={`../assets/img/${image}`} fluid={true} />
   if(!id) return <h1>Cargando</h1>
   return (
     <Container className={"pt-5 mt-5"}>
       <Row>
         <Col lg={6}>
-          <Image className="w-75" src={`../assets/img/${image}`} fluid={true} />
+          <Image className="w-75" src={image} fluid={true} />
         </Col>
         <Col lg={6}>
 
@@ -38,7 +38,7 @@ const ItemDetail = ({ id, title, price, image, detail ,extendedDetail,category,c
           <p>{category}</p>
           <p>{`STOCK: ${stock}`}</p>
           <p>
-            {extendedDetail}
+            {detail}
           </p>
           {showCount ? <ItemCount count={count} setCount={setCount} stock={stock} onAdd={onAdd}/>
           : <Link className="ItemDetail__link" to="/cart">{count} Items agregado <br/> Terminar mi compra </Link>}
