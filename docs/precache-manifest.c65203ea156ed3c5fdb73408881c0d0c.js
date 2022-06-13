@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/MrBlo/reactWebCHdeploy/static/js/runtime~main.9bb35dea.js"
   },
   {
-    "revision": "69c67378e5cf4ef8d7931613669f8c77",
+    "revision": "f4a90165fb09044216dd18e5d228c913",
     "url": "/MrBlo/reactWebCHdeploy/index.html"
   }
 ];

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MrBlo/reactWebCHdeploy/precache-manifest.8f428b5e2d1110a464740eadafdb6fb7.js"
+  "/MrBlo/reactWebCHdeploy/precache-manifest.c65203ea156ed3c5fdb73408881c0d0c.js"
 );
 
 workbox.clientsClaim();
