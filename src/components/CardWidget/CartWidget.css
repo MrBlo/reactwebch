@@ -4,6 +4,7 @@
 
 .CartWidget__image {
   width: 32px;
+  filter: invert();
 }
 
 .CartWidget__counter {
@@ -14,4 +15,5 @@
   right: 0;
   height: 12px;
   width: 4px;
+  color: whitesmoke;
 }

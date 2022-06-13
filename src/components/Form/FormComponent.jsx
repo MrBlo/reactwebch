@@ -34,7 +34,7 @@ const Input = ({
   );
 };
 
-const FormComponent = ({total, compra}) => {
+const FormComponent = ({ total, compra }) => {
   const { clear } = useContext(CartContext);
   const { fetchGenerateTicket } = useFirebase();
   const [formulario, setFormulario] = useState({
@@ -49,8 +49,6 @@ const FormComponent = ({total, compra}) => {
   });
 
   const [error, setError] = useState({});
-  
-  
 
   const {
     buyer: { email, nombre, apellido, telefono },
@@ -69,7 +67,7 @@ const FormComponent = ({total, compra}) => {
     const idOrder = await fetchGenerateTicket({ data: formulario });
     Swal.fire({
       title: "Genial!",
-      text: "Su orden de compra se genero correctamente!\ncon id:"+idOrder,
+      text: "Su orden de compra se genero correctamente!\ncon id:" + idOrder,
       icon: "success",
     });
     clear();
@@ -98,18 +96,18 @@ const FormComponent = ({total, compra}) => {
   return (
     <form onSubmit={onSubmit} className="container border">
       <h3 className="text-uppercase text-center my-4">datos recipiente</h3>
-      {Object.keys(formulario.buyer).map((key,index) => (
+      {Object.keys(formulario.buyer).map((key, index) => (
         <Input
-        key={index}
-        className="mb-3"
-        type="text"
-        name={`${key}`}
-        value={key.value}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        inputClassName={`form-control ${error[key] && "is-invalid"}`}
-        placeholder={`${key}`}
-        error={error}
+          key={index}
+          className="mb-3"
+          type="text"
+          name={`${key}`}
+          value={key.value}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          inputClassName={`form-control ${error[key] && "is-invalid"}`}
+          placeholder={`${key}`}
+          error={error}
         />
       ))}
       <div className="border row d-flex px-2">

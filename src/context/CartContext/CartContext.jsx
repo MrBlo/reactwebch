@@ -1,50 +1,77 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from "react";
 
-export const CartContext = createContext('');
+export const CartContext = createContext("");
 
-const CartProvider = ({children}) => {
-    const [itemCart, setItemCart] = useState([]);
-    const [countItems, setCountItems] = useState(0);
+const CartProvider = ({ children }) => {
+  const [itemCart, setItemCart] = useState([]);
+  const [countItems, setCountItems] = useState(0);
 
-    const addItem = (item) => {
-        const itemClone = [...itemCart];
-        const index = itemClone.findIndex(i => i.id == item.id);
-        if(index != -1){
-            itemClone[index].quantity += item.quantity;
-        }else{
-            itemClone.push(item);
-        }
-        setItemCart(itemClone);
-        getTotalItems(itemClone);
+  const addItem = (item) => {
+    const itemCartClone = [...itemCart];
+    const index = itemCartClone.findIndex((i) => i.id == item.id);
+    if (index != -1) {
+      itemCartClone[index].quantity += item.quantity;
+    } else {
+      itemCartClone.push(item);
     }
-    const getTotalPrice =() => {
-        return itemCart.reduce((previusValue, currentValue) => (previusValue + currentValue.quantity*currentValue.price),0)
+    setItemCart(itemCartClone);
+    getTotalItems(itemCartClone);
+  };
+
+  const getCount = (id) => {
+    const index = itemCart.findIndex((i) => i.id == id);
+    if (index == -1) {
+      return 0;
+    } else {
+      return itemCart[index].quantity;
     }
-    const getTotalItems =(itemClone) => {
-        setCountItems(
-            itemClone.reduce((previusValue, currentValue) => (previusValue + (currentValue.quantity||0)),0)
-            )
-    }
-    const removeItem = (id) => {
-        let index = itemCart.findIndex(i => i.id == id);
-        if (index == -1) return;
-        const itemClone = [...itemCart];
-        itemClone.splice(index, index == 0 ? index + 1 : index);
-        setItemCart(itemClone)
-        getTotalItems(itemClone);
-    };
+  };
 
-    const clear = () => {
-        setCountItems(0);
-        setItemCart([])
-    };
-    //const isInCart = (id) => itemCart.includes(i => i.id==id);
+  const getTotalPrice = () => {
+    return itemCart.reduce(
+      (previusValue, currentValue) =>
+        previusValue + currentValue.quantity * currentValue.price,
+      0
+    );
+  };
+  const getTotalItems = (itemClone) => {
+    setCountItems(
+      itemClone.reduce(
+        (previusValue, currentValue) =>
+          previusValue + (currentValue.quantity || 0),
+        0
+      )
+    );
+  };
+  const removeItem = (id) => {
+    let index = itemCart.findIndex((i) => i.id == id);
+    if (index == -1) return;
+    const itemClone = [...itemCart];
+    itemClone.splice(index, index == 0 ? index + 1 : index);
+    setItemCart(itemClone);
+    getTotalItems(itemClone);
+  };
 
-    return (
-        <CartContext.Provider value={{itemCart,addItem,removeItem,clear,getTotalPrice,countItems}}>
-                {children}
-        </CartContext.Provider>
-  )
-}
+  const clear = () => {
+    setCountItems(0);
+    setItemCart([]);
+  };
 
-export default CartProvider
+  return (
+    <CartContext.Provider
+      value={{
+        itemCart,
+        addItem,
+        removeItem,
+        clear,
+        getTotalPrice,
+        countItems,
+        getCount,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export default CartProvider;

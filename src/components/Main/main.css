@@ -1,0 +1,29 @@
+.main {
+  display: block;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: whitesmoke;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  object-fit: cover;
+  object-position: top center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background-image: url("https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgbg");
+  transform: scaleX(-1);
+  background-attachment: fixed;
+  filter: blur(2px) brightness(0.4);
+}
+
+.main-inside {
+  height: 60vh;
+  position: relative;
+}

@@ -1,0 +1,18 @@
+.Cart_ul {
+  list-style-type: none;
+}
+
+.Cart_image {
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.Cart__button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  width: 200px;
+  font-size: 15px;
+}

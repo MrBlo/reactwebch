@@ -6,8 +6,14 @@ const LayOut = () => {
   return (
     <>
       <NavBar />
-
       <Outlet />
+      <div className="text-center mt-5 pt-5">
+        <p>
+          Pablo Arias
+          <br />
+          para coderhouse
+        </p>
+      </div>
     </>
   );
 };

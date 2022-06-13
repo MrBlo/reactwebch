@@ -5,9 +5,9 @@ import Rutas from './routes/Rutas';
 function App() {
   return (
     <div className="App">
-    <CartProvider>
-      <Rutas/>
-    </CartProvider></div>
+      <CartProvider>
+        <Rutas />
+      </CartProvider></div>
   );
 }
 

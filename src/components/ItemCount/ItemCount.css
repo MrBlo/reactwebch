@@ -4,23 +4,22 @@
   align-items: center;
   gap: 10px;
   border-radius: 5px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #a19ec7;
-  height: 50px;
-  margin-top: 30px;
+  height: 35px;
+}
+
+.ItemCount__add,
+.ItemCount__button {
+  background-color: lightslategray;
+  color: whitesmoke;
 }
 
 .ItemCount__button {
-  height: 30px;
-  width: 30px;
-  background-color: #2f305c;
+  height: 25px;
+  width: 35px;
   outline: none;
   cursor: pointer;
   border: none;
   border-radius: 15px;
-  color: whiteSmoke;
   font-size: 30px;
   font-weight: bolder;
   line-height: 0px;
@@ -32,20 +31,13 @@
 .ItemCount__counter {
   font-size: 20px;
   margin-bottom: 0;
-  width: 22px;
 }
 
-.ItemCount_add{
-  background-color: #2a2a4c;
+.ItemCount__add {
   outline: none;
-  cursor: pointer;
   border: none;
-  margin-left: 16%;
-  margin: auto auto;
   border-radius: 5px;
-  color: white;
-  height: 40px;
-  width: 66%;
-  margin-top: 5px;
+  height: 35px;
+  width: 200px;
   font-size: 15px;
 }

@@ -1,3 +1,6 @@
-export const validarTodoLLeno = (campos) => {
-    return campos.some((campo) => campo === "")
-  }
+const validarTodoLLeno = (campos) => {
+  return campos.some((campo) => campo === "");
+};
+
+
+export { validarTodoLLeno };
