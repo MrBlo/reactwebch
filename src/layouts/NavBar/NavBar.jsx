@@ -8,11 +8,13 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <NavLink className="navbar-brand" to="/">
           Automotora eCommerce
         </NavLink>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
           <NavLink className="nav-link" to="/">
             Inicio
@@ -30,6 +32,7 @@ function NavBar() {
             <CartWidget />
           </NavLink>
         </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext/CartContext";
-import ItemCount from "../ItemCount/ItemCount";
 import Swal from "sweetalert2";
 import "./ItemCard.css";
 
@@ -32,20 +31,6 @@ function ItemCard({ title, image, price, id, stock, detail }) {
         <Link to={`/item/${id}`} className="ItemCard__detail">
           Ver Detalle
         </Link>
-      </div>
-      <div>
-        {showCount ? (
-          <ItemCount
-            count={count}
-            setCount={setCount}
-            stock={stock}
-            onAdd={onAdd}
-          />
-        ) : (
-          <Link className="ItemDetail__link" to="/cart">
-            {count} Items agregado <br /> Terminar mi compra{" "}
-          </Link>
-        )}
       </div>
     </div>
   );

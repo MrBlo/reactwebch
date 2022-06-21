@@ -17,7 +17,7 @@ const ItemDetail = ({
   categoryId,
   stock,
 }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [showCount, setShowCount] = useState(true);
   const { addItem, getCount } = useContext(CartContext);
 

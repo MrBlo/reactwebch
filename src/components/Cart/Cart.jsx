@@ -12,12 +12,12 @@ const Cart = () => {
   useEffect(() => {}, [itemCart]);
 
   return getTotalPrice() != 0 ? (
-    <div className="px-5 w-75 mt-5 mx-auto">
-      <ul className="Cart__ul">
+    <div className="px-5 vw-75 mt-5 mx-auto">
+      <ul className="Cart__ul p-0 container">
         {itemCart.map((e, index) => {
           return (
             <li
-              className="d-flex justify-content-evenly mt-2 border py-5"
+              className="d-flex flex-column align-items-center flex-md-row justify-content-evenly mt-2 border py-5"
               key={index}
             >
               <Image className="Cart_image" src={e.image} fluid={true} />
